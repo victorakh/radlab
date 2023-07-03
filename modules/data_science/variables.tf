@@ -40,7 +40,7 @@ variable "billing_budget_amount" {
 variable "billing_budget_amount_currency_code" {
   description = "The 3-letter currency code defined in ISO 4217 (https://cloud.google.com/billing/docs/resources/currency#list_of_countries_and_regions). It must be the currency associated with the billing account. {{UIMeta group=0 order=9 updatesafe }}"
   type        = string
-  default     = "USD"
+  default     = "USD_SGD"
 }
 
 variable "billing_budget_credit_types_treatment" {
@@ -228,7 +228,7 @@ variable "owner_users" {
 variable "project_id_prefix" {
   description = "If `create_project` is true, this will be the prefix of the Project ID & name created. If `create_project` is false this will be the actual Project ID, of the existing project where you want to deploy the module. {{UIMeta group=1 order=2 }}"
   type        = string
-  default     = "radlab-data-science"
+  default     = "radlab-data-science-NEW"
 }
 
 variable "resource_creator_identity" {
