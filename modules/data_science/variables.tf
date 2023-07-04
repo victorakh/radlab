@@ -114,7 +114,8 @@ variable "create_network" {
 variable "create_project" {
   description = "Set to true if the module has to create a project.  If you want to deploy in an existing project, set this variable to false. {{UIMeta group=1 order=1 }}"
   type        = bool
-  default     = true
+#default  = true
+  default     = false
 }
 
 variable "create_usermanaged_notebook" {
