@@ -244,7 +244,7 @@ variable "set_billing_permissions" {
 variable "super_admins" {
   description = "Grants Owner permissions on the project.  Should only be used during the initial phase or as a break glass procedure.  Should come in the format user:, group:"
   type        = set(string)
-  default     = []
+  default     = ["user:admin@gacteam.online"]
 }
 
 variable "terraform_builder_checksum" {
