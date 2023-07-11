@@ -29,7 +29,7 @@ variable "app_engine_location" {
 variable "billing_account_id" {
   description = "Billing account that will be attached to the Google Cloud project."
   type        = string
-  default     = "01CAFC-1FFAF8-E2F15D"
+  default     = "015DA5-25D1D3-D66C07"
 
   validation {
     condition     = var.billing_account_id == null || can(regex("^[0-9A-Z]{6}-[0-9A-Z]{6}-[0-9A-Z]{6}$", var.billing_account_id))
@@ -149,7 +149,7 @@ variable "git_repo_access_token" {
 variable "git_repo_url" {
   description = "URL of the repository where the module code will be stored.  Used by Cloud Build to retrieve the source code and build modules.  If you want to use the open source repository, this can be set to https://github.com/GoogleCloudPlatform/rad-lab."
   type        = string
-  default     = "https://github.com/GoogleCloudPlatform/rad-lab"
+  default     = "https://github.com/victorakh/radlab"
 }
 
 variable "git_repo_type" {
@@ -195,13 +195,13 @@ variable "module_deployment_folder" {
 variable "organization_name" {
   description = "Domain of the organization where the project will be created."
   type        = string
-  default    = "yongsh.altostrat.com"
+  default    = "gacteam.online"
 }
 
 variable "parent" {
   description = "Parent ID where the RAD Lab UI project should be created.  Has to be formatted as 'folders/12345678'"
   type        = string
-  default     = "folders/1042161227413"
+  default     = "folders/724033726568"
 
   validation {
     condition     = var.parent == null || can(regex("^folders/[0-9]+", var.parent))
@@ -248,7 +248,7 @@ variable "set_billing_permissions" {
 variable "super_admins" {
   description = "Grants Owner permissions on the project.  Should only be used during the initial phase or as a break glass procedure.  Should come in the format user:, group:"
   type        = set(string)
-  default     = ["user:orgadmin1@yongsh.altostrat.com"]
+  default     = ["user:admin@gacteam.online"]
 }
 
 variable "terraform_builder_checksum" {
