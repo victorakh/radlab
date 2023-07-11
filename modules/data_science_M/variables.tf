@@ -216,7 +216,7 @@ variable "organization_id" {
 variable "owner_groups" {
   description = "List of groups that should be added as the owner of the created project. {{UIMeta group=1 order=6 updatesafe }}"
   type        = list(string)
-  default     = []
+  default     = ["rad-lab-admins@gacteam.online"]
 }
 
 variable "owner_users" {
@@ -270,7 +270,7 @@ variable "subnet_name" {
 variable "trusted_groups" {
   description = "The list of trusted groups (e.g. `myteam@abc.com`). {{UIMeta group=1 order=5 updatesafe }}"
   type        = set(string)
-  default     = []
+  default     = ["rad-lab-users@gacteam.online"]
 }
 
 variable "trusted_users" {
@@ -282,5 +282,5 @@ variable "trusted_users" {
 variable "zone" {
   description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=us-central1-b,us-east1-a,us-west3-b,us-east4-c }}"
   type        = string
-  default     = "us-central1-c"
+  default     = "asia-southeast1"
 }
