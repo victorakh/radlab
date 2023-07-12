@@ -228,7 +228,7 @@ variable "owner_users" {
 variable "project_id_prefix" {
   description = "If `create_project` is true, this will be the prefix of the Project ID & name created. If `create_project` is false this will be the actual Project ID, of the existing project where you want to deploy the module. {{UIMeta group=1 order=2 }}"
   type        = string
-  default     = "radlab-data-science-s"
+  default     = "radlab-data-science"
 }
 
 variable "resource_creator_identity" {
@@ -280,7 +280,7 @@ variable "trusted_users" {
 }
 
 variable "zone" {
-  description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=asia-southeast1-a,us-central1-b,us-east1-a,us-west3-b,us-east4-c }}"
+  description = "yongsh_test_customization_ds: Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=asia-southeast1-a,asia-southeast1-b,asia-southeast1-c }}"
   type        = string
-  default     = "asia-southeast1-a"
+  default     = "asia-southeast1"
 }
