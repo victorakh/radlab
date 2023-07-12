@@ -163,13 +163,13 @@ variable "folder_id" {
 variable "gpu_accelerator_type" {
   description = "Type of GPU you would like to spin up. {{UIMeta group=3 order=10 }}"
   type        = string
-  default     = ""
+  default     = "nvidia-tesla-t4"
 }
 
 variable "gpu_accelerator_core_count" {
   description = "Number of of GPU core count. {{UIMeta group=3 order=11 }}"
   type        = number
-  default     = 0
+  default     = 2
 }
 
 variable "image_family" {
@@ -283,5 +283,5 @@ variable "trusted_users" {
 variable "zone" {
   description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=us-central1-b,us-east1-a,us-west3-b,us-east4-c }}"
   type        = string
-  default     = "us-central1-c"
+  default     = "us-central1-a"
 }
