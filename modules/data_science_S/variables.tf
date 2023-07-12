@@ -223,13 +223,13 @@ variable "owner_groups" {
 variable "owner_users" {
   description = "List of users that should be added as owner to the created project. {{UIMeta group=1 order=7 updatesafe }}"
   type        = list(string)
-  default     = "rad-lab-users@gacteam.online"
+  default     = ["rad-lab-admins@gacteam.online"]
 }
 
 variable "project_id_prefix" {
   description = "If `create_project` is true, this will be the prefix of the Project ID & name created. If `create_project` is false this will be the actual Project ID, of the existing project where you want to deploy the module. {{UIMeta group=1 order=2 }}"
   type        = string
-  default     = "radlab-data-science"
+  default     = ["rad-lab-users@gacteam.online"]
 }
 
 variable "resource_creator_identity" {
