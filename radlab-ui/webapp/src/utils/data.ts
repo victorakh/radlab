@@ -540,7 +540,7 @@ variable "default_region" {
 variable "default_zone" {
   description = "The default zone where the CloudSQL, Compute Instance be deployed"
   type        = string
-  default     = "us-central1-a"
+  default     = "asia-southeast1-a"
 }
 variable "enable_services" {
   description = "Enable the necessary APIs on the project.  When using an existing project, this can be set to false."
@@ -1038,5 +1038,5 @@ variable "region" {
 variable "zone" {
   description = "Cloud Zone associated to the Vertex AI Workbench. {{UIMeta group=4 order=2 options=${ZONE_LIST} }}"
   type        = string
-  default     = "us-central1-a"
+  default     = "asia-southeast1-a"
 }`
