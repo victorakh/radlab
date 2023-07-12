@@ -216,13 +216,13 @@ variable "organization_id" {
 variable "owner_groups" {
   description = "List of groups that should be added as the owner of the created project. {{UIMeta group=1 order=6 updatesafe }}"
   type        = list(string)
-  default     = []
+  default     = "rad-lab-admins@gacteam.online"
 }
 
 variable "owner_users" {
   description = "List of users that should be added as owner to the created project. {{UIMeta group=1 order=7 updatesafe }}"
   type        = list(string)
-  default     = []
+  default     = "rad-lab-users@gacteam.online"
 }
 
 variable "project_id_prefix" {
@@ -234,7 +234,7 @@ variable "project_id_prefix" {
 variable "resource_creator_identity" {
   description = "Terraform Service Account which will be creating the GCP resources. If not set, it will use user credentials spinning up the module. {{UIMeta group=0 order=4 updatesafe }}"
   type        = string
-  default     = ""
+  default     = "rad-lab-module-creator@rad-lab-ui-84fb.iam.gserviceaccount.com"
 }
 
 variable "set_domain_restricted_sharing_policy" {
