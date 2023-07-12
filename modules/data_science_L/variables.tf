@@ -193,7 +193,7 @@ variable "ip_cidr_range" {
 variable "machine_type" {
   description = "Type of VM you would like to spin up. {{UIMeta group=3 order=6 }}"
   type        = string
-  default     = "n1-standard-2"
+  default     = "g2-standard-24"
 }
 
 variable "network_name" {
