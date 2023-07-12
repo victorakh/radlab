@@ -29,7 +29,7 @@ variable "app_engine_location" {
 variable "billing_account_id" {
   description = "Billing account that will be attached to the Google Cloud project."
   type        = string
-  default     = "015DA5-25D1D3-D66C07"
+  default     = "01CAFC-1FFAF8-E2F15D"
 
   validation {
     condition     = var.billing_account_id == null || can(regex("^[0-9A-Z]{6}-[0-9A-Z]{6}-[0-9A-Z]{6}$", var.billing_account_id))
