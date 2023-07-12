@@ -193,7 +193,7 @@ variable "ip_cidr_range" {
 variable "machine_type" {
   description = "Type of VM you would like to spin up. {{UIMeta group=3 order=6 }}"
   type        = string
-  default     = "n1-standard-1"
+  default     = "n1-standard-2"
 }
 
 variable "network_name" {
@@ -271,7 +271,7 @@ variable "subnet_name" {
 variable "trusted_groups" {
   description = "The list of trusted groups (e.g. `myteam@abc.com`). {{UIMeta group=1 order=5 updatesafe }}"
   type        = set(string)
-  default     = []
+  default     = ["rad-lab-users@gacteam.online"]
 }
 
 variable "trusted_users" {
