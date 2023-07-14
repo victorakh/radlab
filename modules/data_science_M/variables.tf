@@ -235,7 +235,7 @@ variable "project_id_prefix" {
 variable "resource_creator_identity" {
   description = "Terraform Service Account which will be creating the GCP resources. If not set, it will use user credentials spinning up the module. {{UIMeta group=0 order=4 updatesafe }}"
   type        = string
-  default     = "rad-lab-module-creator@rad-lab-ui-84fb.iam.gserviceaccount.com"
+  default     = ""
 }
 
 variable "set_domain_restricted_sharing_policy" {
@@ -281,7 +281,7 @@ variable "trusted_users" {
 }
 
 variable "zone" {
-  description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=us-central1-b,us-east1-a,us-west3-b,us-east4-c }}"
+  description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=asia-southeast1-a,asia-southeast1-b,asia-southeast1-c }}"
   type        = string
-  default     = "us-central1-c"
+  default     = "asia-southeast1-a"
 }
