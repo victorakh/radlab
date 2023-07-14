@@ -1032,7 +1032,7 @@ variable "folder_id" {
 variable "region" {
   description = "Region where the resources should be created. {{UIMeta group=4 order=1 options=${REGION_LIST} }}"
   type        = string
-  default     = "us-central1"
+  default     = "asia-southeast1"
 }
 
 variable "zone" {
