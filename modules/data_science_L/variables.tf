@@ -33,13 +33,13 @@ variable "billing_budget_alert_spent_percents" {
 }
 
 variable "billing_budget_amount" {
-  description = "The amount to use as the budget in USD. {{UIMeta group=0 order=7 updatesafe }}"
+  description = "The amount to use as the budget in USD. {{UIMeta group=0 order=8 updatesafe }}"
   type        = number
   default     = 500
 }
 
 variable "billing_budget_amount_currency_code" {
-  description = "The 3-letter currency code defined in ISO 4217 (https://cloud.google.com/billing/docs/resources/currency#list_of_countries_and_regions). It must be the currency associated with the billing account. {{UIMeta group=0 order=8 updatesafe }}"
+  description = "The 3-letter currency code defined in ISO 4217 (https://cloud.google.com/billing/docs/resources/currency#list_of_countries_and_regions). It must be the currency associated with the billing account. {{UIMeta group=0 order=9 updatesafe }}"
   type        = string
   default     = "USD"
 }
@@ -83,7 +83,7 @@ variable "billing_budget_pubsub_topic" {
 }
 
 variable "boot_disk_size_gb" {
-  description = "The size of the boot disk in GB attached to this instance.  {{UIMeta group=3 order=9 options=50,100,500 }}"
+  description = "The size of the boot disk in GB attached to this instance.  {{UIMeta group=3 order=8 options=50,100,500 }}"
   type        = number
   default     = 100
 }
@@ -143,7 +143,7 @@ variable "deployment_id" {
 }
 
 variable "enable_gpu_driver" {
-  description = "Install GPU driver on the instance. {{UIMeta group=3 order=8 }}"
+  description = "Install GPU driver on the instance. {{UIMeta group=3 order=9 }}"
   type        = bool
   default     = true
 }
@@ -160,18 +160,17 @@ variable "folder_id" {
   default     = ""
 }
 
-variable "gpu_accelerator_core_count" {
-  description = "Number of GPU core count. {{UIMeta group=3 order=10 }}"
-  type        = number
-  default     = 2
-}
-
 variable "gpu_accelerator_type" {
-  description = "Type of GPU you would like to spin up. {{UIMeta group=3 order=11 }}"
+  description = "Type of GPU you would like to spin up. {{UIMeta group=3 order=10 }}"
   type        = string
   default     = "NVIDIA_TESLA_L4"
 }
 
+variable "gpu_accelerator_core_count" {
+  description = "Number of GPU core count. {{UIMeta group=3 order=11 }}"
+  type        = number
+  default     = 2
+}
 
 variable "image_family" {
   description = "Image of the AI notebook. {{UIMeta group=3 order=13 }}"
@@ -192,7 +191,7 @@ variable "ip_cidr_range" {
 }
 
 variable "machine_type" {
-  description = "Type of VM you would like to spin up. {{UIMeta group=3 order=11 }}"
+  description = "Type of VM you would like to spin up. {{UIMeta group=3 order=6 }}"
   type        = string
   default     = "g2-standard-24"
 }
@@ -222,7 +221,7 @@ variable "owner_groups" {
 }
 
 variable "owner_users" {
-  description = "List of users that should be added as owner to the created project. {{UIMeta group=1 order=6 updatesafe }}"
+  description = "List of users that should be added as owner to the created project. {{UIMeta group=1 order=7 updatesafe }}"
   type        = list(string)
   default     = []
 }
