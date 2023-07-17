@@ -145,7 +145,7 @@ variable "deployment_id" {
 variable "enable_gpu_driver" {
   description = "Install GPU driver on the instance. {{UIMeta group=3 order=9 }}"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "enable_services" {
