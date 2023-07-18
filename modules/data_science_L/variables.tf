@@ -281,7 +281,7 @@ variable "trusted_users" {
 }
 
 variable "zone" {
-  description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=asia-southeast1-a,asia-southeast1-b,asia-southeast1-c }}"
+  description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=asia-south1-a }}"
   type        = string
-  default     = "asia-southeast1-a"
+  default     = "asia-south1-a"
 }
