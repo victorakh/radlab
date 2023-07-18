@@ -163,13 +163,13 @@ variable "folder_id" {
 variable "gpu_accelerator_type" {
   description = "Type of GPU you would like to spin up. {{UIMeta group=3 order=10 }}"
   type        = string
-  default     = "NVIDIA_TESLA_A100"
+  default     = "NVIDIA_TESLA_T4"
 }
 
 variable "gpu_accelerator_core_count" {
   description = "Number of GPU core count. {{UIMeta group=3 order=11 }}"
   type        = number
-  default     = 1
+  default     = 4
 }
 
 variable "image_family" {
@@ -205,7 +205,7 @@ variable "network_name" {
 variable "notebook_count" {
   description = "Number of AI Notebooks requested. {{UIMeta group=3 order=2 updatesafe }}"
   type        = number
-  default     = 4
+  default     = 1
 }
 
 variable "organization_id" {
