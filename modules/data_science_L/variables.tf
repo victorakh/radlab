@@ -193,7 +193,7 @@ variable "ip_cidr_range" {
 variable "machine_type" {
   description = "Type of VM you would like to spin up. {{UIMeta group=3 order=6 }}"
   type        = string
-  default     = "a2-highgpu-1g"
+  default     = "n1-standard-4"
 }
 
 variable "network_name" {
@@ -205,7 +205,7 @@ variable "network_name" {
 variable "notebook_count" {
   description = "Number of AI Notebooks requested. {{UIMeta group=3 order=2 updatesafe }}"
   type        = number
-  default     = 1
+  default     = 4
 }
 
 variable "organization_id" {
@@ -281,7 +281,7 @@ variable "trusted_users" {
 }
 
 variable "zone" {
-  description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=asia-southeast1-b }}"
+  description = "Cloud Zone associated to the AI Notebooks. {{UIMeta group=2 order=3 options=asia-southeast1-a,asia-southeast1-b,asia-southeast1-c }}"
   type        = string
-  default     = "asia-southeast1-b"
+  default     = "asia-southeast1-a"
 }
