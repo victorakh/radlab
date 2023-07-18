@@ -163,7 +163,7 @@ variable "folder_id" {
 variable "gpu_accelerator_type" {
   description = "Type of GPU you would like to spin up. {{UIMeta group=3 order=10 }}"
   type        = string
-  default     = "NVIDIA_TESLA_L4"
+  default     = "NVIDIA_L4"
 }
 
 variable "gpu_accelerator_core_count" {
