@@ -59,9 +59,9 @@ output "user_scripts_bucket_uri" {
   value       = google_storage_bucket.user_scripts_bucket.self_link
 }
 
-output "local_region" {
-  value       = local.region
-}
+#output "local_region" {
+#  value       = local.region
+#}
 
 
 output "notebook_location" {
