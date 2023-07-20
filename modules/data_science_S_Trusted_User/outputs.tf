@@ -62,3 +62,8 @@ output "user_scripts_bucket_uri" {
 output "local_region" {
   value       = locals.region
 }
+
+
+output "notebook_location" {
+  value       = google_notebooks_instance.ai_notebook_usermanaged.location
+}
