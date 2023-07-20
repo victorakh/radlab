@@ -60,5 +60,5 @@ output "user_scripts_bucket_uri" {
 }
 
 output "local_region" {
-  value       = local.region
+  value       = locals.region
 }
