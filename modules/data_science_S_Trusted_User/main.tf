@@ -20,8 +20,10 @@ locals {
   ? try(module.project_radlab_ds_analytics.0, null)
   : try(data.google_project.existing_project.0, null)
   )
-  region = join("-", [split("-", var.zone)[0], split("-", var.zone)[1]])
-  zone = "asia-southeast1-a"
+
+  #hardcode Singapore to bypass the region/zone bug
+  #region = join("-", [split("-", var.zone)[0], split("-", var.zone)[1]])
+  region = "asia-southeast1"
 
   network = (
   var.create_network
