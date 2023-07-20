@@ -21,6 +21,7 @@ locals {
   : try(data.google_project.existing_project.0, null)
   )
   region = join("-", [split("-", var.zone)[0], split("-", var.zone)[1]])
+  zone = "asia-southeast1-a"
 
   network = (
   var.create_network
