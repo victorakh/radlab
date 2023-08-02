@@ -32,21 +32,13 @@ resource "google_project_iam_member" "role_viewer" {
   role     = "roles/viewer"
 }
 
-# Add role_compute_starter and role_compute_stopper
+# Add role_compute_starter and role_compute_starter_stopper
 resource "google_project_iam_member" "role_compute_starter" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
   project  = local.project.project_id
   member   = each.value
-  role    = "roles/compute.instances.start"
+  role    = "roles/compute.instanceAdmin"
 }
-
-resource "google_project_iam_member" "role_compute_stopper" {
-  for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
-  project  = local.project.project_id
-  member   = each.value
-  role    = "roles/compute.instances.stop"
-}
-
 
 
 #########################################################################
