@@ -53,13 +53,11 @@ resource "google_project_iam_custom_role" "vm_manager_role" {
 }
 
 resource "google_project_iam_binding" "vm_manager_binding" {
+  for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
   project = local.project.project_id
   role    = google_project_iam_custom_role.vm_manager_role.role_id
+  member   = each.value
 
-  members = tolist(concat(
-    [for user in var.trusted_users : "user:${user}"],
-    [for group in var.trusted_groups : "group:${group}"]
-  ))
 }
 
 
