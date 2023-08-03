@@ -26,7 +26,7 @@ resource "google_project_iam_member" "role_notebooks_admin" {
 }
 
 
-/**
+
 # Original viewer role
 resource "google_project_iam_member" "role_viewer" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
@@ -35,7 +35,7 @@ resource "google_project_iam_member" "role_viewer" {
   role     = "roles/viewer"
 }
 
-
+/**
 # Add role_compute_starter and role_compute_starter_stopper
 resource "google_project_iam_member" "role_compute_starter" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
@@ -43,7 +43,7 @@ resource "google_project_iam_member" "role_compute_starter" {
   member   = each.value
   role    = "roles/compute.instanceAdmin"
 }
-*/
+
 
 resource "google_project_iam_custom_role" "viewer_with_vm_permissions_role" {
   role_id     = "viewer_with_vm_permissions_role"
@@ -63,7 +63,7 @@ resource "google_project_iam_member" "viewer_with_vm_permissions" {
   role     = google_project_iam_custom_role.viewer_with_vm_permissions_role.role_id
 }
 
-
+*/
 
 #########################################################################
 # IAM - Owner User/Group
