@@ -32,6 +32,7 @@ resource "google_project_iam_member" "role_viewer" {
   role     = "roles/viewer"
 }
 
+/**
 # Add role_compute_starter and role_compute_starter_stopper
 resource "google_project_iam_member" "role_compute_starter" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
@@ -39,6 +40,25 @@ resource "google_project_iam_member" "role_compute_starter" {
   member   = each.value
   role    = "roles/compute.instanceAdmin"
 }
+*/
+
+resource "google_project_iam_custom_role" "vm_management_role" {
+  role_id     = "vm_manager_role"
+  title       = "VM Manager Role"
+  description = "Custom role for Trusted users managing VM start and stop operations"
+  permissions = [
+    "compute.instances.start",
+    "compute.instances.stop",
+  ]
+}
+
+resource "google_project_iam_binding" "vm_management_binding" {
+  for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
+  role    = google_project_iam_custom_role.vm_management_role.role_id
+  project  = local.project.project_id
+  member   = each.value
+}
+
 
 
 #########################################################################
