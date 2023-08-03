@@ -17,7 +17,7 @@
 variable "billing_account_id" {
   description = "Billing Account associated to the GCP Resources.  {{UIMeta group=0 order=3 updatesafe }}"
   type        = string
-  default     = "01CAFC-1FFAF8-E2F15D"
+  default     = "01A31F-7BC6AF-3620C5"
 }
 
 variable "billing_budget_alert_spend_basis" {
