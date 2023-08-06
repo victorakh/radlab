@@ -29,7 +29,7 @@ variable "app_engine_location" {
 variable "billing_account_id" {
   description = "Billing account that will be attached to the Google Cloud project."
   type        = string
-  default     = "01CAFC-1FFAF8-E2F15D"
+  default     = "01A31F-7BC6AF-3620C5"
 
   validation {
     condition     = var.billing_account_id == null || can(regex("^[0-9A-Z]{6}-[0-9A-Z]{6}-[0-9A-Z]{6}$", var.billing_account_id))
@@ -248,7 +248,7 @@ variable "set_billing_permissions" {
 variable "super_admins" {
   description = "Grants Owner permissions on the project.  Should only be used during the initial phase or as a break glass procedure.  Should come in the format user:, group:"
   type        = set(string)
-  default     = ["user:admin@gacteam.online"]
+  default     = ["user:rad-lab-module-creator@rad-lab-ui-ac07.iam.gserviceaccount.com"]
 }
 
 variable "terraform_builder_checksum" {
