@@ -25,8 +25,7 @@ resource "google_project_iam_member" "role_notebooks_admin" {
   role     = "roles/notebooks.admin"
 }
 
-
-
+/**
 # Original viewer role
 resource "google_project_iam_member" "role_viewer" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
@@ -34,6 +33,24 @@ resource "google_project_iam_member" "role_viewer" {
   member   = each.value
   role     = "roles/viewer"
 }
+
+*/
+
+resource "google_project_iam_custom_role" "viewer_with_vm_permissions_role" {
+  role_id     = "viewer_with_vm_permissions_role"
+  title       = "Viewer with VM Permissions Role"
+  description = "Custom role for viewing and managing VM start and stop operations"
+  permissions = ["roles/viewer", "compute.instances.start", "compute.instances.stop"]
+}
+
+resource "google_project_iam_member" "role_viewer" {
+  for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
+  project  = local.project.project_id
+  member   = each.value
+  role     = "roles/viewer_with_vm_permissions_role"
+}
+
+
 
 /**
 # Add role_compute_starter and role_compute_starter_stopper
