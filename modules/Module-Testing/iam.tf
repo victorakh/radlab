@@ -44,7 +44,7 @@ resource "google_project_iam_custom_role" "viewer_with_vm_permissions_role" {
   description = "Custom role for viewing and managing VM start and stop operations"
   permissions = [
     "compute.instances.start",
-    "compute.instances.stop",
+    "compute.instances.stop"
   ]
 }
 
@@ -52,7 +52,7 @@ resource "google_project_iam_member" "custom_role_member" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
   project  = local.project.project_id
   member   = each.value
-  role   = google_project_iam_custom_role.viewer_with_vm_permissions_role
+  role   = "google_project_iam_custom_role.viewer_with_vm_permissions_role"
 }
 
 
