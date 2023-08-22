@@ -25,8 +25,6 @@ resource "google_project_iam_member" "role_notebooks_admin" {
   role     = "roles/notebooks.admin"
 }
 
-/**
-# Original viewer role
 resource "google_project_iam_member" "role_viewer" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
   project  = local.project.project_id
@@ -34,7 +32,6 @@ resource "google_project_iam_member" "role_viewer" {
   role     = "roles/viewer"
 }
 
-*/
 
 
 # Test script starts from here
