@@ -36,8 +36,9 @@ resource "google_project_iam_member" "role_viewer" {
 
 # Test script starts from here
 # create custom role vm_start_stop_custom_role
-resource "google_project_iam_custom_role" "vm_start_stop_custom_role" {
+resource "google_project_iam_custom_role" "custom_role" {
   role_id     = "vm_start_stop_custom_role"
+  project     = "local.project.project_id"
   title       = "vm_start_stop_custom_role"
   description = "vm_start_stop_custom_role"
   permissions = [
@@ -45,7 +46,6 @@ resource "google_project_iam_custom_role" "vm_start_stop_custom_role" {
     "compute.instances.stop"
   ]
 }
-
 
 
 /**
