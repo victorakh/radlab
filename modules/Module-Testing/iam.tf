@@ -48,7 +48,7 @@ resource "google_project_iam_custom_role" "start_stop_role" {
 }
 
 
-resource "google_project_iam_member" "adding_custom_role_vm_start_stop" {
+resource "google_project_iam_member" "role_custom_vm_start_stop" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
   project  = local.project.project_id
   member   = each.value
