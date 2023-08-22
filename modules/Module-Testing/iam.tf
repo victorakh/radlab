@@ -48,8 +48,11 @@ resource "google_project_iam_custom_role" "start_stop_role" {
 }
 
 
-output "start_stop_role_id" {
-  value = google_project_iam_custom_role.start_stop_role.role_id
+resource "google_project_iam_member" "adding_custom_role_vm_start_stop" {
+  for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
+  project  = local.project.project_id
+  member   = each.value
+  role     = "roles/vm_start_stop_custom_role"
 }
 
 
