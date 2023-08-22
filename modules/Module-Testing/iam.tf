@@ -43,7 +43,7 @@ resource "google_project_iam_custom_role" "custom_role" {
   description = "vm_start_stop_custom_role"
   permissions = [
     "compute.instances.start",
-    "compute.instances.stop"
+    "compute.instances.stop",
   ]
 }
 
