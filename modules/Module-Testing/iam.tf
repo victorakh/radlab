@@ -32,6 +32,7 @@ resource "google_project_iam_member" "role_viewer" {
   role     = "roles/viewer"
 }
 
+
 /**
 
 # Test script starts from here
