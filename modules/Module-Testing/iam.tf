@@ -32,7 +32,7 @@ resource "google_project_iam_member" "role_viewer" {
   role     = "roles/viewer"
 }
 
-
+/**
 
 # Test script starts from here
 # create custom role vm_start_stop_custom_role
@@ -62,7 +62,7 @@ resource "google_project_iam_member" "role_custom_vm_start_stop" {
 
 
 
-/**
+
 # Add role_compute_starter and role_compute_starter_stopper
 resource "google_project_iam_member" "role_compute_starter" {
   for_each = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
