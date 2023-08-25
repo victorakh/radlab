@@ -217,7 +217,7 @@ variable "organization_id" {
 variable "owner_groups" {
   description = "List of groups that should be added as the owner of the created project. {{UIMeta group=1 order=6 updatesafe }}"
   type        = list(string)
-  default     = ["ntu-rad-lab-owner@gacteam.online"]
+  default     = ["ntu-rad-lab-admins@gacteam.online"]
 }
 
 variable "owner_users" {
