@@ -217,7 +217,7 @@ variable "organization_id" {
 variable "owner_groups" {
   description = "List of groups that should be added as the owner of the created project. {{UIMeta group=1 order=6 updatesafe }}"
   type        = list(string)
-  default     = ["ntu-rad-lab-admins@gacteam.online"]
+  default     = ["rad-lab-admins@gacteam.online"]
 }
 
 variable "owner_users" {
@@ -271,7 +271,7 @@ variable "subnet_name" {
 variable "trusted_groups" {
   description = "The list of trusted groups (e.g. `myteam@abc.com`). {{UIMeta group=1 order=5 updatesafe }}"
   type        = set(string)
-  default     = ["ntu-rad-lab-trusted-users@gacteam.online"]
+  default     = ["rad-lab-trusted-users@gacteam.online"]
 }
 
 variable "trusted_users" {
