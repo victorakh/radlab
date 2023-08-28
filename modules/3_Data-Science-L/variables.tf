@@ -271,7 +271,7 @@ variable "subnet_name" {
 variable "trusted_groups" {
   description = "The list of trusted groups (e.g. `myteam@abc.com`). {{UIMeta group=1 order=5 updatesafe }}"
   type        = set(string)
-  default     = ["rad-lab-notebook-users@gacteam.online"]
+  default     = ["rad-lab-trusted-users@gacteam.online"]
 }
 
 variable "trusted_users" {
