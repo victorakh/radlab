@@ -1032,14 +1032,16 @@ variable "folder_id" {
 
 #Hide this as I'm fixing the region/zone bug by hardcoding in main.tf so no point displaying this option
 variable "region" {
-  description = "Region where the resources should be created. {{UIMeta group=0 order=1 options=${REGION_LIST} }}"
+#  description = "Region where the resources should be created. {{UIMeta group=0 order=1 options=${REGION_LIST} }}"
+  description = "Region where the resources should be created. {{UIMeta group=0 order=1 options=asia-southeast1 }}"
   type        = string
   default     = "asia-southeast1"
 }
 
 #Hide this as I'm fixing the region/zone bug by hardcoding in main.tf so no point displaying this option
 variable "zone" {
-  description = "Cloud Zone associated to the Vertex AI Workbench. {{UIMeta group=0 order=2 options=${ZONE_LIST} }}"
+#  description = "Cloud Zone associated to the Vertex AI Workbench. {{UIMeta group=0 order=2 options=${ZONE_LIST} }}"
+  description = "Cloud Zone associated to the Vertex AI Workbench. {{UIMeta group=0 order=1 options=asia-southeast1-a }}"
   type        = string
   default     = "asia-southeast1-a"
 }`
