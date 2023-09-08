@@ -158,12 +158,15 @@ resource "google_service_account" "sa_p_notebook" {
   display_name = "Notebooks in trusted environment"
 }
 
+/**
 resource "google_project_iam_member" "sa_p_notebook_permissions" {
   for_each = toset(local.notebook_sa_project_roles)
   project  = local.project.project_id
   member   = "serviceAccount:${google_service_account.sa_p_notebook.email}"
   role     = each.value
 }
+*/
+
 
 resource "google_service_account_iam_member" "sa_ai_notebook_iam" {
   for_each           = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
