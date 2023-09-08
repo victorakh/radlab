@@ -167,15 +167,13 @@ resource "google_project_iam_member" "sa_p_notebook_permissions" {
 }
 
 
-/**  To disable STE CDCS Users notebook access
+
 resource "google_service_account_iam_member" "sa_ai_notebook_iam" {
   for_each           = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
   member             = each.value
   role               = "roles/iam.serviceAccountUser"
   service_account_id = google_service_account.sa_p_notebook.id
 }
-
-*/
 
 
 resource "null_resource" "ai_notebook_usermanaged_provisioning_state" {
