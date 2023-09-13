@@ -314,34 +314,16 @@ resource "google_storage_bucket_iam_binding" "binding" {
   members = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
 }
 
-# Patch Management
-resource "google_os_config_patch_deployment" "patch" {
-  patch_deployment_id = "patch-deploy"
-
-  instance_filter {
-    all = true
-  }
-
-  recurring_schedule {
-    time_zone {
-      id = "Asia/Singapore"
-    }
-
-    time_of_day {
-      hours = 0
-      minutes = 30
-      seconds = 30
-      nanos = 20
-    }
-  }
-}
 
 
 # Create Cloud Storage bucket
-resource "google_storage_bucket" "static" {
- name          = "notebook-bucket"
- location      = "SG"
- storage_class = "STANDARD"
 
- uniform_bucket_level_access = true
+resource "google_storage_bucket" "notebook_bucket" {
+  project                     = local.project.project_id
+  name                        = join("", ["notebook-bucket-", local.project.project_id])
+  location                    = local.region
+  force_destroy               = true
+  uniform_bucket_level_access = true
 }
+
+
