@@ -333,6 +333,13 @@ resource "google_storage_bucket_iam_binding" "notebook_bucket_binding" {
 }
 
 
+
+# Enable VM Manager service
+resource "google_project_service" "vm_manager" {
+  project = local.project.project_id
+  service = "osconfig.googleapis.com"  # Service name for VM Manager
+}
+
 # Create OS Patch Job
 resource "google_os_config_patch_deployment" "patch" {
   project                     = local.project.project_id
