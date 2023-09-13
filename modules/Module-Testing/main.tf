@@ -324,3 +324,12 @@ resource "google_storage_bucket" "notebook_bucket" {
   force_destroy               = true
   uniform_bucket_level_access = true
 }
+
+# Create Cloud Storage bucket IAM binding
+resource "google_storage_bucket_iam_binding" "notebook_bucket_binding" {
+  bucket  = google_storage_bucket.notebook_bucket.name
+  role    = "roles/storage.admin"
+  members = toset(concat(formatlist("user:%s", var.trusted_users), formatlist("group:%s", var.trusted_groups)))
+}
+
+
