@@ -342,9 +342,10 @@ resource "google_project_service" "vm_manager" {
 
 resource "google_project_metadata_item" "enable-osconfig" {
   project = local.project.project_id
-  key     = enable-osconfig
-  value   = true
+  key     = "enable-osconfig"
+  value   = "TRUE"
 }
+
 
 # Create OS Patch Job
 resource "google_os_config_patch_deployment" "patch" {
