@@ -315,7 +315,7 @@ resource "google_storage_bucket_iam_binding" "binding" {
 # Create Cloud Storage bucket
 resource "google_storage_bucket" "notebook_bucket" {
   project                     = local.project.project_id
-  name                        = join("", ["jupyter-cloud-storage"])
+  name                        = join("", ["jupyter-gcs-", local.project.project_id])
   location                    = local.region
   force_destroy               = true
   uniform_bucket_level_access = true
